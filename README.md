@@ -3,4 +3,5 @@
 Contains configuration for:
 
 - Neovim
+- WindowsTerminal
 
