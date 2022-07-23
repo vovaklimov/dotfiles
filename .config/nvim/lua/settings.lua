@@ -5,6 +5,7 @@ local opt = vim.opt -- vim options
 opt.hlsearch = false
 opt.incsearch = true
 opt.errorbells = false
+opt.termguicolors = true
 -- window options
 opt.relativenumber = true
 opt.scrolloff = 8
