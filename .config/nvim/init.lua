@@ -21,5 +21,18 @@ require('nvim-treesitter.configs').setup {
     },
 }
 
-vim.cmd('colorscheme gruvbox');
+require('telescope').setup {
+    defaults = {
+        color_devicons = false,
+    },
+}
+
+vim.cmd('colorscheme gruvbox')
+
+vim.g.mapleader = ' '
+
+local remapUtils = require('keymaps')
+local nnoremap = remapUtils.nnoremap
+
+nnoremap('<leader>ff', ':Telescope find_files<cr>')
 
