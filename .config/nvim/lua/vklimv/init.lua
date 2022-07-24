@@ -1,6 +1,7 @@
 require('vklimv.settings')
 require('vklimv.plugins')
 require('vklimv.telescope')
+require('vklimv.remaps')
 
 required_languages = { 'javascript',
                        'typescript',
@@ -24,13 +25,4 @@ require('nvim-treesitter.configs').setup {
 
 
 
-local remapUtils = require('vklimv.keymaps')
-local nnoremap = remapUtils.nnoremap
 
-nnoremap('<leader>ff', function()
-    require('telescope.builtin').find_files({ hidden = true })
-end)
-
-nnoremap('<C-p>', function()
-    require('telescope.builtin').git_files({ show_untracked = true })
-end)
