@@ -22,9 +22,7 @@ require('nvim-treesitter.configs').setup {
     },
 }
 
-vim.cmd('colorscheme gruvbox')
 
-vim.g.mapleader = ' '
 
 local remapUtils = require('vklimv.keymaps')
 local nnoremap = remapUtils.nnoremap
