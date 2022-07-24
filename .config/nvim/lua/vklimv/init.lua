@@ -29,6 +29,10 @@ vim.g.mapleader = ' '
 local remapUtils = require('vklimv.keymaps')
 local nnoremap = remapUtils.nnoremap
 
-nnoremap('<leader>ff', ':Telescope find_files<cr>')
-nnoremap('<C-p>', ':Telescope git_files<cr>')
+nnoremap('<leader>ff', function()
+    require('telescope.builtin').find_files({ hidden = true })
+end)
 
+nnoremap('<C-p>', function()
+    require('telescope.builtin').git_files({ show_untracked = true })
+end)
