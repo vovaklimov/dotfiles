@@ -6,7 +6,7 @@ require('packer').startup(function()
 
     use('gruvbox-community/gruvbox')
     
-    use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
+    use({'nvim-treesitter/nvim-treesitter'})
 
     use('sbdchd/neoformat')
     
