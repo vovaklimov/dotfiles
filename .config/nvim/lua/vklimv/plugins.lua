@@ -7,8 +7,6 @@ require('packer').startup(function()
     use('gruvbox-community/gruvbox')
     
     use({'nvim-treesitter/nvim-treesitter'})
-
-    use('sbdchd/neoformat')
     
     use('nvim-lua/popup.nvim')
     
@@ -16,13 +14,18 @@ require('packer').startup(function()
         requires = {{'nvim-lua/plenary.nvim'}}
     })
 
+    -- Snippets
+    use('saadparwaiz1/cmp_luasnip')
+    use('L3MON4D3/LuaSnip')
+
     -- LSP
     use('neovim/nvim-lspconfig')
-    use({'hrsh7th/cmp-nvim-lsp',
-        requires = {
-            {'hrsh7th/nvim-cmp'}
-        }
-    })
+
+    -- Completions
+    use('hrsh7th/nvim-cmp')
+    use('hrsh7th/cmp-nvim-lsp')
+    use('hrsh7th/cmp-buffer')
+    use('hrsh7th/cmp-path')
 
 end)
 

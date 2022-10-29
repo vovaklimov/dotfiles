@@ -1,5 +1,6 @@
 local lspconfig = require('lspconfig')
 local nnoremap = require('vklimv.remap-utils').nnoremap
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local opts = { silent = true }
 nnoremap('<leader>e', vim.diagnostic.open_float, opts)
@@ -8,9 +9,7 @@ nnoremap(']d', vim.diagnostic.goto_next, opts)
 nnoremap('<leader>q', vim.diagnostic.setloclist, opts)
 
 local onAttach = function(client, bufnr)
-    -- Enable completion triggered by <c-x><c-o>
-    -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
+    -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v.lua.vim.lsp.omnifunc')
     -- Key mappings
     local bufopts = { buffer = bufnr, silent = true }
 
@@ -22,20 +21,16 @@ local onAttach = function(client, bufnr)
     nnoremap('<leader>rn', vim.lsp.buf.rename, bufopts)
     nnoremap('<leader>ca', vim.lsp.buf.code_action, bufopts)
     nnoremap('gr', vim.lsp.buf.references, bufopts)
-    nnoremap('<leader>f', vim.lsp.buf.formatting, bufopts)       
+    nnoremap('<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)       
 end
 
-lspconfig.tsserver.setup {
-    on_attach = onAttach,
+local lsp_flags = {
+    debaunce_text_changes = 150,
 }
 
-lspconfig.rls.setup {
-    settings = {
-        rust = {
-            all_features = true,
-            build_on_save = false,
-        }
-    },
+lspconfig.rust_analyzer.setup {
     on_attach = onAttach,
+    flags = lsp_flags,
+    capabilities = capabilities,
 }
 
