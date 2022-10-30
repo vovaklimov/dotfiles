@@ -9,7 +9,6 @@ nnoremap(']d', vim.diagnostic.goto_next, opts)
 nnoremap('<leader>q', vim.diagnostic.setloclist, opts)
 
 local onAttach = function(client, bufnr)
-    -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v.lua.vim.lsp.omnifunc')
     -- Key mappings
     local bufopts = { buffer = bufnr, silent = true }
 
@@ -31,6 +30,12 @@ local lsp_flags = {
 lspconfig.rust_analyzer.setup {
     on_attach = onAttach,
     flags = lsp_flags,
+    capabilities = capabilities,
+}
+
+lspconfig.tsserver.setup {
+    on_attach = onAttach,
+    lsp_flags = lsp_flags,
     capabilities = capabilities,
 }
 
