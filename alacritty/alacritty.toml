@@ -1,0 +1,35 @@
+live_config_reload = true
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+decorations_theme_variant = "Dark"
+dynamic_padding = false
+dynamic_title = true
+[window.padding]
+x = 8
+y = 8
+[window.dimensions]
+columns = 160
+lines = 40
+
+[shell]
+program = 'wsl'
+args = ['-d', 'Ubuntu-24.04', '--cd', '~']
+
+[font]
+size = 13
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular"
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+[font.italic]
+family = "JetBrains Mono"
+style = "Italic"
+[font.bold_italic]
+family = "JetBrains Mono"
+style = "Bold Italic"

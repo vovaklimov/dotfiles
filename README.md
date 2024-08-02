@@ -5,4 +5,4 @@ Contains configuration for:
 - Neovim
 - WindowsTerminal
 - tmux
-
+- alacritty
