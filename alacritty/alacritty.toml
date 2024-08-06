@@ -1,3 +1,7 @@
+import = [
+  '~\alacritty\themes\themes\tokyo-night.toml',
+]
+
 live_config_reload = true
 
 [env]
@@ -22,14 +26,5 @@ args = ['-d', 'Ubuntu-24.04', '--cd', '~']
 size = 13
 
 [font.normal]
-family = "JetBrains Mono"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
-[font.bold]
-family = "JetBrains Mono"
-style = "Bold"
-[font.italic]
-family = "JetBrains Mono"
-style = "Italic"
-[font.bold_italic]
-family = "JetBrains Mono"
-style = "Bold Italic"
